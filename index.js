@@ -72,3 +72,41 @@ for(let l=0; l<longText.length;l++) {
 }
 
 console.log(countEt);
+
+// EVITANDO QUE TOME LOS "ET" DENTRO DE PALABRAS
+
+let countEtWord = 0;
+
+for(let m = 0; m<longText.length;m++) {
+    let check = longText[m] + longText[m+1] + longText[m+2] + longText[m+3];
+    if (check === " et ") {
+        countEtWord++;
+    }
+}
+
+console.log(countEtWord);
+
+// Bonus 2
+
+let phraseToCheck = "A man, a plan, a canal, Panama!"
+let lowerPhraseToCheck = ""
+
+for (let i=0; i<phraseToCheck.length;i++) {
+    let letter = phraseToCheck[i].toLowerCase();
+    if(letter>="a" && letter<="z"){
+        lowerPhraseToCheck += letter;
+    }
+}
+
+let reversedLower = "";
+
+for(let i=phraseToCheck.length-1; i>=0; i--) {
+    let letter = phraseToCheck[i].toLowerCase();
+    if(letter>="a" && letter<="z"){
+        reversedLower += letter;
+    }
+}
+
+if(lowerPhraseToCheck===reversedLower) {
+    console.log("Es un palíndromo!")
+}
